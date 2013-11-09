@@ -9,6 +9,7 @@ function fha_footer_override() {
 function fha_header_override(){
     get_template_part('templates/fha-header');
 }
+
 function fha_scripts() {
     wp_enqueue_style( 'fha', get_stylesheet_directory_uri() . '/assets/css/fha.css' );
     wp_enqueue_style('shoestrap_css', shoestrap_css( 'url' ), false, null);

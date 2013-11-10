@@ -41,11 +41,11 @@
 
   // If there is a "shoestrap_below_top_navbar" action, add it here.
   // This is also used to render the extra header.
-  if ( has_action( 'shoestrap_below_top_navbar' ) ) :
-    echo '<div class="before-main-wrapper">';
-    do_action('shoestrap_below_top_navbar');
-    echo '</div>';
-  endif;
+  //if ( has_action( 'shoestrap_below_top_navbar' ) ) :
+    //echo '<div class="before-main-wrapper">';
+    //do_action('shoestrap_below_top_navbar');
+    //echo '</div>';
+  //endif;
 
   // The "shoestrap_pre_wrap" hook.
   // This is also used to render the hero area.

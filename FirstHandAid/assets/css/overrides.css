@@ -1,0 +1,11 @@
+.header-content .col-md-4.center-text ul {
+    list-style-type: none;
+}
+
+.header-content .col-md-4.center-text ul li {
+    display: inline;
+}
+
+.header-content .col-md-4.center-text ul li a {
+    color: #FFFFFF;
+}

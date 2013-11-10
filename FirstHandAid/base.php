@@ -1,3 +1,4 @@
+<?php remove_filter ('the_content', 'wpautop'); ?>
 <?php get_template_part('templates/head'); ?>
 <body <?php body_class(); ?>>
 
@@ -63,30 +64,29 @@
 
       // The "shoestrap_pre_main" hook
       do_action('shoestrap_pre_main');
-
+      
+      $showSideBar = ( ( shoestrap_getLayout() != 0 && ( roots_display_sidebar() ) ) || ( is_front_page() && shoestrap_getVariable( 'layout_sidebar_on_front' ) == 1 ) ) && ( !is_front_page() || ( is_front_page() && shoestrap_getVariable( 'layout_sidebar_on_front' ) == 1 ) );
       // If the layout requires an extra wrapping element, add it here.
-      if ( shoestrap_section_class( 'wrap' ) ) {
-        echo '<div class="mp_wrap ' . shoestrap_section_class( 'wrapper' ) . '"><div class="row">';
+      if ( $showSideBar ) {
+        echo '<div class="container"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix" style="margin:100px 80px 0 80px;"><div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">';
       }
 
         include roots_template_path();
 
       do_action('shoestrap_after_main');
 
-      // Add the PRIMARY sidebar when applicable.
-      if ( ( shoestrap_getLayout() != 0 && ( roots_display_sidebar() ) ) || ( is_front_page() && shoestrap_getVariable( 'layout_sidebar_on_front' ) == 1 ) ) :
-        if ( !is_front_page() || ( is_front_page() && shoestrap_getVariable( 'layout_sidebar_on_front' ) == 1 ) ) :
-          echo '<aside class="sidebar ' . shoestrap_section_class( 'primary' ) . '" role="complementary">';
+      // Add the PRIMARY sidebar when applicable.      
+      if ( $showSideBar ) :
+          echo '</div><aside class="sidebar ' . shoestrap_section_class( 'primary' ) . '" role="complementary">';
             if ( !has_action( 'shoestrap_sidebar_override' ) )
               include roots_sidebar_path();
             else
               do_action( 'shoestrap_sidebar_override' );
           echo '</aside><!-- /.sidebar -->';
-        endif;
       endif;
 
       // If the layout requires an extra wrapping element and we added it before, close it here.
-      if ( shoestrap_section_class( 'wrap' ) )
+      if ( $showSideBar )
         echo '</div></div>';
 
       // Add the SECONDARY sidebar when applicable.

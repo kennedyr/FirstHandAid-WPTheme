@@ -19,6 +19,7 @@ function fha_scripts() {
     wp_enqueue_style( 'normalize', get_stylesheet_directory_uri() . '/assets/css/normalize.css' );
     wp_enqueue_style( 'fha', get_stylesheet_directory_uri() . '/assets/css/fha.css' );
     wp_enqueue_style( 'overrides', get_stylesheet_directory_uri() . '/assets/css/overrides.css' );
+    wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/css/main.css' );
     wp_enqueue_script( 'fha', get_stylesheet_directory_uri() . '/assets/js/fha.js' );
 }
 

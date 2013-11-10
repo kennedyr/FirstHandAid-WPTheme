@@ -463,9 +463,9 @@ height: 969px;
 }
 
 
+.videospace div.video{width:35%;float:left;}
 
-
-
+.videospace div.video-text{width:35%;float:left;min-height:350px;}
 
 
 

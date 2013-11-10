@@ -1,11 +1,25 @@
-.header-content .col-md-4.center-text ul {
+.header-content .connect-col.center-text ul {
     list-style-type: none;
 }
 
-.header-content .col-md-4.center-text ul li {
+.header-content .connect-col.center-text ul li {
     display: inline;
 }
 
-.header-content .col-md-4.center-text ul li a {
+.header-content .connect-col.center-text ul li a {
     color: #FFFFFF;
+}
+
+.btn-default {
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+    color: #333333;
+}
+
+body.top-navbar.admin-bar, body.top-navbar{
+    padding: 0;
+}
+
+html body{
+    margin: 0 !important;
 }
